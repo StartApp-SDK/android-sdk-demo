@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.startapp.startappinterstitialexample"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <!-- StartApp required permissions integration -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- optional permissions - required only when integrating the home button exit ad -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- End of StartApp permissions integration -->
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name="com.startapp.startappinterstitialexample.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.startapp.startappinterstitialexample.SecondActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black">
+        </activity>
+        
+        <!-- StartApp activities integration -->
+        <activity
+            android:name="com.startapp.android.publish.list3d.List3DActivity"
+            android:taskAffinity="com.startapp.startappinterstitialexample.StartApp"
+            android:theme="@android:style/Theme" />
+        <activity
+            android:name="com.startapp.android.publish.AppWallActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:taskAffinity="com.startapp.startappinterstitialexample.StartApp"
+            android:theme="@android:style/Theme.Translucent" />
+        <!-- End of StartApp activities integration -->
+
+    </application>
+
+</manifest>
