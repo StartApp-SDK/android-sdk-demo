@@ -9,7 +9,7 @@ It is compiled with Android 2.2 (API level 8) and supports any device running th
 The example application contains the following ads:
 * Splash ad (when entering the application)
 * Interstitial ad when navigating from the MainActivity to the SecondActivity by clicking the "Next Activity" button
-* Banners - the application contains an integration of the banner both in the layout XML file ([/res/layout/activity_second.xml](/res/layout/activity_second.xml)) and programatically ([/src/com/startapp/startappinterstitialexample/SecondActivity.java](/src/com/startapp/startappinterstitialexample/SecondActivity.java))
+* Banners - the application contains an integration of the banner both in the layout XML file ([/res/layout/activity_main.xml](/res/layout/activity_main.xml)) and programatically ([/src/com/startapp/startappinterstitialexample/SecondActivity.java](/src/com/startapp/startappinterstitialexample/SecondActivity.java))
 * Exit ad for exiting the application with the back button
 * Exit ad for exiting the application with the home button
 
