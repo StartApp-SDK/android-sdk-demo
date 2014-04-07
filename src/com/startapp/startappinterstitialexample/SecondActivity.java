@@ -10,7 +10,7 @@ import com.startapp.android.publish.banner.Banner;
 
 public class SecondActivity extends Activity {
 	
-	/** StartAppAd object deceleration */
+	/** StartAppAd object declaration */
 	private StartAppAd startAppAd = new StartAppAd(this);
 		
 	@Override
@@ -18,10 +18,10 @@ public class SecondActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_second);
 		
-		// ****** Adding Banner Within JAVA Code *******
-		RelativeLayout mainLayout = (RelativeLayout)findViewById(R.id.second_layout);
+		/** Add banner programmatically (within Java code, instead of within the layout xml) **/
+		RelativeLayout mainLayout = (RelativeLayout) findViewById(R.id.second_layout);
 		
-		// Define StartApp Banner
+		// Create new StartApp banner
 		Banner startAppBanner = new Banner(this);
 		RelativeLayout.LayoutParams bannerParameters = 
 				new RelativeLayout.LayoutParams(
@@ -30,21 +30,20 @@ public class SecondActivity extends Activity {
 		bannerParameters.addRule(RelativeLayout.CENTER_HORIZONTAL);
 		bannerParameters.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
 		
-		// Add to main Layout
+		// Add the banner to the main layout
 		mainLayout.addView(startAppBanner, bannerParameters);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
+		
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.second, menu);
 		return true;
 	}
 	
 	/**
-	 * 
-	 * part of Activity life cycle
-	 * Need as part of the StartAppAd object life cycle
+	 * Part of the activity's life cycle, StartAppAd should be integrated here.
 	 */
 	@Override
 	public void onResume(){
@@ -53,8 +52,8 @@ public class SecondActivity extends Activity {
 	}
 	
 	/**
-	 * part of Activity life cycle
-	 * For Home button implementation
+	 * Part of the activity's life cycle, StartAppAd should be integrated here
+	 * for the home button exit ad integration.
 	 */
 	@Override
 	public void onPause(){
@@ -63,8 +62,8 @@ public class SecondActivity extends Activity {
 	}
 	
 	/**
-	 * part of Activity life cycle
-	 * For Back button implementation
+	 * Part of the activity's life cycle, StartAppAd should be integrated here
+	 * for the back button exit ad integration.
 	 */
 	@Override
 	public void onBackPressed() {

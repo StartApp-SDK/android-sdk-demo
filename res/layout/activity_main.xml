@@ -15,12 +15,32 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:id="@+id/btnNextActivity"
+    <ImageView
+        android:id="@+id/imgFreeApp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:onClick="freeAppClick"
+        android:enabled="false"/>
+    
+    <TextView
+        android:id="@+id/txtFreeApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/imgFreeApp"
+        android:onClick="freeAppClick"
+        android:enabled="false"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/btnNextActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imgFreeApp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
         android:onClick="btnNextActivityClick"
         android:text="Next Activity" />
 
