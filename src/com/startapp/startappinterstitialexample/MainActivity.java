@@ -13,6 +13,7 @@ import com.startapp.android.publish.Ad;
 import com.startapp.android.publish.AdDisplayListener;
 import com.startapp.android.publish.AdEventListener;
 import com.startapp.android.publish.StartAppAd;
+import com.startapp.android.publish.StartAppSDK;
 import com.startapp.android.publish.nativead.NativeAdDetails;
 import com.startapp.android.publish.nativead.NativeAdPreferences;
 import com.startapp.android.publish.nativead.NativeAdPreferences.NativeAdBitmapSize;
@@ -78,7 +79,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		StartAppAd.init(this, "DeveloperID", "ApplicationID"); //TODO: Replace with your IDs
+		StartAppSDK.init(this, "DeveloperID", "ApplicationID", true); //TODO: Replace with your IDs
 		
 		/** Create Splash Ad **/
 		StartAppAd.showSplash(this, savedInstanceState,
