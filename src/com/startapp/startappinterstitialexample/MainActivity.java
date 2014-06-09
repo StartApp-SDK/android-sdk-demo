@@ -21,7 +21,7 @@ import com.startapp.android.publish.nativead.StartAppNativeAd;
 import com.startapp.android.publish.splash.SplashConfig;
 import com.startapp.android.publish.splash.SplashConfig.Theme;
 
-public class MainActivity extends Activity { 
+public class MainActivity extends Activity {
 	
 	/** StartAppAd object declaration */
 	private StartAppAd startAppAd = new StartAppAd(this);
