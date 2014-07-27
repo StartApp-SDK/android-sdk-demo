@@ -143,7 +143,16 @@ public class MainActivity extends Activity {
 			 */
 			@Override
 			public void adDisplayed(Ad ad) {
+				
+			}
 
+			/**
+			 * Callback when ad has been clicked
+			 * @param ad
+			 */
+			@Override
+			public void adClicked(Ad arg0) {
+				
 			}
 		});
 	}
