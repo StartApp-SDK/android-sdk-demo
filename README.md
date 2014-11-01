@@ -22,4 +22,4 @@ Don't forget to use your developers id and application id when initializing the 
 
 For any question or assistance, please contact us at support@startapp.com.
 
-[StartApp]: http://www.startapp.com
+[StartApp]: http://links.anawaz.com/startapp
