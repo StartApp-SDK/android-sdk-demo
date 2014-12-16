@@ -84,8 +84,8 @@ public class MainActivity extends Activity {
 		/** Create Splash Ad **/
 		StartAppAd.showSplash(this, savedInstanceState,
 				new SplashConfig()
-					.setTheme(Theme.SKY)
-					.setLogo(R.drawable.logo360x360)
+					.setTheme(Theme.GLOOMY)
+					.setLogo(R.drawable.logo)
 					.setAppName("StartApp Example")
 		);
 		
