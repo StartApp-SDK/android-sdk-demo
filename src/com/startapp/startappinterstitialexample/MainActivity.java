@@ -154,6 +154,15 @@ public class MainActivity extends Activity {
 			public void adClicked(Ad arg0) {
 				
 			}
+
+			/**
+             * Callback when ad not displayed
+             * @param ad
+             */
+            @Override
+            public void adNotDisplayed(Ad arg0) {
+                
+            }
 		});
 	}
 
