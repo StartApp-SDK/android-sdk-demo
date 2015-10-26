@@ -5,27 +5,31 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.startapp.android.publish.Ad;
 import com.startapp.android.publish.AdDisplayListener;
 import com.startapp.android.publish.AdEventListener;
 import com.startapp.android.publish.StartAppAd;
 import com.startapp.android.publish.StartAppSDK;
+import com.startapp.android.publish.StartAppAd.AdMode;
 import com.startapp.android.publish.nativead.NativeAdDetails;
 import com.startapp.android.publish.nativead.NativeAdPreferences;
 import com.startapp.android.publish.nativead.NativeAdPreferences.NativeAdBitmapSize;
 import com.startapp.android.publish.nativead.StartAppNativeAd;
 import com.startapp.android.publish.splash.SplashConfig;
 import com.startapp.android.publish.splash.SplashConfig.Theme;
+import com.startapp.android.publish.video.VideoListener;
 
 public class MainActivity extends Activity {
 	
 	/** StartAppAd object declaration */
 	private StartAppAd startAppAd = new StartAppAd(this);
-	
+
 	/** StartApp Native Ad declaration */
 	private StartAppNativeAd startAppNativeAd = new StartAppNativeAd(this);
 	private NativeAdDetails nativeAd = null;
@@ -100,21 +104,21 @@ public class MainActivity extends Activity {
 		if (txtFreeApp != null) {
 			txtFreeApp.setText("Loading Native Ad...");
 		}
-		
+	
 		/** 
-		 * Load Native Ad with the following parameters:
-		 * 1. Only 1 Ad
-		 * 2. Download ad image automatically
-		 * 3. Image size of 150x150px
-		 */
+	     * Load Native Ad with the following parameters:
+	     * 1. Only 1 Ad
+	     * 2. Download ad image automatically
+	     * 3. Image size of 150x150px
+	     */
 		startAppNativeAd.loadAd(
-				new NativeAdPreferences()
-					.setAdsNumber(1)
-					.setAutoBitmapDownload(true)
-					.setImageSize(NativeAdBitmapSize.SIZE150X150),
-				nativeAdListener);
+                new NativeAdPreferences()
+                    .setAdsNumber(1)
+                    .setAutoBitmapDownload(true)
+                    .setImageSize(NativeAdBitmapSize.SIZE150X150),
+                nativeAdListener);
 	}
-
+    
 	/**
 	 * Method to run when the next activity button is clicked.
 	 * @param view
@@ -164,6 +168,49 @@ public class MainActivity extends Activity {
                 
             }
 		});
+	}
+	
+	/**
+	 * Method to run when rewarded button is clicked
+	 * @param view
+	 */
+	public void btnShowRewardedClick(View view) {
+	    final StartAppAd rewardedVideo = new StartAppAd(this);
+	    
+	    /**
+	     * This is very important: set the video listener to be triggered after video
+	     * has finished playing completely
+	     */
+	    rewardedVideo.setVideoListener(new VideoListener() {
+            
+            @Override
+            public void onVideoCompleted() {
+                Toast.makeText(MainActivity.this, "Rewarded video has completed - grant the user his reward", Toast.LENGTH_LONG).show();
+            }
+        });
+	    
+	    /**
+	     * Load rewarded by specifying AdMode.REWARDED
+	     * We are using AdEventListener to trigger ad show
+	     */
+	    rewardedVideo.loadAd(AdMode.REWARDED_VIDEO, new AdEventListener() {
+            
+            @Override
+            public void onReceiveAd(Ad arg0) {
+                rewardedVideo.showAd();
+            }
+            
+            @Override
+            public void onFailedToReceiveAd(Ad arg0) {
+                /**
+                 * Failed to load rewarded video:
+                 * 1. Check that FullScreenActivity is declared in AndroidManifest.xml: 
+                 * See https://github.com/StartApp-SDK/Documentation/wiki/Android-InApp-Documentation#activities
+                 * 2. Is android API level above 16?
+                 */
+                Log.e("MainActivity", "Failed to load rewarded video with reason: " + arg0.getErrorMessage());
+            }
+        });
 	}
 
 	/**

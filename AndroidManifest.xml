@@ -7,9 +7,12 @@
     <!-- StartApp required permissions integration -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!-- End of StartApp permissions integration -->
+    
+    <!-- StartApp optional permissions integration -->
+    <!-- Note: StartApp SDK doesn't request location updates proactively but only uses the last known location. -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -40,9 +43,14 @@
             android:name="com.startapp.android.publish.list3d.List3DActivity"
             android:theme="@android:style/Theme" />
         <activity
-            android:name="com.startapp.android.publish.AppWallActivity"
-            android:configChanges="orientation|keyboardHidden"
+            android:name="com.startapp.android.publish.OverlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name="com.startapp.android.publish.FullScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme" />
+
         <!-- End of StartApp activities integration -->
 
     </application>

@@ -7,6 +7,7 @@ This Android application project provides an example of the [StartApp][] InApp S
 It is compiled with Android 2.2 (API level 8) and supports any device running this Android version or higher.
 
 The example application contains the following ads:
+* Rewarded video when clicking "Show Rewarded" button
 * Splash ad (when entering the application)
 * Slider (on the main activity)
 * Native ad (on the main activity, displaying the app's icon and title)
