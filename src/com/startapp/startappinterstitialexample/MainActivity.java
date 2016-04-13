@@ -95,8 +95,6 @@ public class MainActivity extends Activity {
 		
 		setContentView(R.layout.activity_main);
 		
-		/** Add Slider **/
-		StartAppAd.showSlider(this);
 		
 		/** Initialize Native Ad views **/
 		imgFreeApp = (ImageView) findViewById(R.id.imgFreeApp);
