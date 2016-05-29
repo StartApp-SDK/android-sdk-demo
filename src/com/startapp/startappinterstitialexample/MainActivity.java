@@ -83,7 +83,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		StartAppSDK.init(this, "DeveloperID", "ApplicationID", true); //TODO: Replace with your IDs
+		StartAppSDK.init(this, "ApplicationID", true); //TODO: Replace with your Application ID
 		
 		/** Create Splash Ad **/
 		StartAppAd.showSplash(this, savedInstanceState,
