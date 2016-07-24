@@ -9,7 +9,6 @@ It is compiled with Android 2.2 (API level 8) and supports any device running th
 The example application contains the following ads:
 * Rewarded video when clicking "Show Rewarded" button
 * Splash ad (when entering the application)
-* Slider (on the main activity)
 * Native ad (on the main activity, displaying the app's icon and title)
 * Interstitial ad when navigating from the MainActivity to the SecondActivity by clicking the "Next Activity" button
 * Banners - the application contains an integration of the banner both in the layout XML file ([/res/layout/activity_main.xml](/res/layout/activity_main.xml)) and programatically ([/src/com/startapp/startappinterstitialexample/SecondActivity.java](/src/com/startapp/startappinterstitialexample/SecondActivity.java))
