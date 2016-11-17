@@ -2,6 +2,20 @@ package com.startapp.startappinterstitialexample;
 
 import java.util.ArrayList;
 
+import com.startapp.android.publish.ads.nativead.NativeAdDetails;
+import com.startapp.android.publish.ads.nativead.NativeAdPreferences;
+import com.startapp.android.publish.ads.nativead.NativeAdPreferences.NativeAdBitmapSize;
+import com.startapp.android.publish.ads.nativead.StartAppNativeAd;
+import com.startapp.android.publish.ads.splash.SplashConfig;
+import com.startapp.android.publish.ads.splash.SplashConfig.Theme;
+import com.startapp.android.publish.adsCommon.Ad;
+import com.startapp.android.publish.adsCommon.StartAppAd;
+import com.startapp.android.publish.adsCommon.StartAppAd.AdMode;
+import com.startapp.android.publish.adsCommon.StartAppSDK;
+import com.startapp.android.publish.adsCommon.VideoListener;
+import com.startapp.android.publish.adsCommon.adListeners.AdDisplayListener;
+import com.startapp.android.publish.adsCommon.adListeners.AdEventListener;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,20 +24,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.startapp.android.publish.Ad;
-import com.startapp.android.publish.AdDisplayListener;
-import com.startapp.android.publish.AdEventListener;
-import com.startapp.android.publish.StartAppAd;
-import com.startapp.android.publish.StartAppSDK;
-import com.startapp.android.publish.StartAppAd.AdMode;
-import com.startapp.android.publish.nativead.NativeAdDetails;
-import com.startapp.android.publish.nativead.NativeAdPreferences;
-import com.startapp.android.publish.nativead.NativeAdPreferences.NativeAdBitmapSize;
-import com.startapp.android.publish.nativead.StartAppNativeAd;
-import com.startapp.android.publish.splash.SplashConfig;
-import com.startapp.android.publish.splash.SplashConfig.Theme;
-import com.startapp.android.publish.video.VideoListener;
 
 public class MainActivity extends Activity {
 	
