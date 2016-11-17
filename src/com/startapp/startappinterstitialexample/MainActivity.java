@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import com.startapp.android.publish.ads.nativead.NativeAdDetails;
 import com.startapp.android.publish.ads.nativead.NativeAdPreferences;
-import com.startapp.android.publish.ads.nativead.NativeAdPreferences.NativeAdBitmapSize;
 import com.startapp.android.publish.ads.nativead.StartAppNativeAd;
 import com.startapp.android.publish.ads.splash.SplashConfig;
 import com.startapp.android.publish.ads.splash.SplashConfig.Theme;
@@ -84,14 +83,6 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		StartAppSDK.init(this, "ApplicationID", true); //TODO: Replace with your Application ID
-		
-		/** Create Splash Ad **/
-		StartAppAd.showSplash(this, savedInstanceState,
-				new SplashConfig()
-					.setTheme(Theme.GLOOMY)
-					.setLogo(R.drawable.logo)
-					.setAppName("StartApp Example")
-		);
 		
 		setContentView(R.layout.activity_main);
 		
