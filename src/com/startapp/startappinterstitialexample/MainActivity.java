@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
                 new NativeAdPreferences()
                     .setAdsNumber(1)
                     .setAutoBitmapDownload(true)
-                    .setImageSize(NativeAdBitmapSize.SIZE150X150),
+                    .setPrimaryImageSize(2),
                 nativeAdListener);
 	}
     
