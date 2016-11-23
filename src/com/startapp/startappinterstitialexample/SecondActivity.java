@@ -1,12 +1,12 @@
 package com.startapp.startappinterstitialexample;
 
+import com.startapp.android.publish.ads.banner.Banner;
+import com.startapp.android.publish.adsCommon.StartAppAd;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.RelativeLayout;
-
-import com.startapp.android.publish.StartAppAd;
-import com.startapp.android.publish.banner.Banner;
 
 public class SecondActivity extends Activity {
 	

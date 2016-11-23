@@ -13,6 +13,7 @@
     <!-- StartApp optional permissions integration -->
     <!-- Note: StartApp SDK doesn't request location updates proactively but only uses the last known location. -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -39,15 +40,16 @@
         </activity>
 
         <!-- StartApp activities integration -->
+        
         <activity
-            android:name="com.startapp.android.publish.list3d.List3DActivity"
+            android:name="com.startapp.android.publish.ads.list3d.List3DActivity"
             android:theme="@android:style/Theme" />
         <activity
-            android:name="com.startapp.android.publish.OverlayActivity"
+            android:name="com.startapp.android.publish.adsCommon.activities.OverlayActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent" />
         <activity
-            android:name="com.startapp.android.publish.FullScreenActivity"
+            android:name="com.startapp.android.publish.adsCommon.activities.FullScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme" />
 
