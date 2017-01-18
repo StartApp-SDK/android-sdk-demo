@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import com.startapp.android.publish.ads.nativead.NativeAdDetails;
 import com.startapp.android.publish.ads.nativead.NativeAdPreferences;
 import com.startapp.android.publish.ads.nativead.StartAppNativeAd;
-import com.startapp.android.publish.ads.splash.SplashConfig;
-import com.startapp.android.publish.ads.splash.SplashConfig.Theme;
 import com.startapp.android.publish.adsCommon.Ad;
 import com.startapp.android.publish.adsCommon.StartAppAd;
 import com.startapp.android.publish.adsCommon.StartAppAd.AdMode;
