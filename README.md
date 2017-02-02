@@ -1,7 +1,7 @@
 [StartApp][] InApp SDK Example Project
 ======================================
 
-*Updated to InApp SDK version 3.5.4* 
+*Updated to InApp SDK version 3.5.5* 
 
 This Android application project provides an example of the [StartApp][] InApp SDK integration.
 It is compiled with Android 2.2 (API level 8) and supports any device running this Android version or higher.
