@@ -16,7 +16,6 @@
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 	<uses-permission android:name="android.permission.BLUETOOTH" />
-	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -55,6 +54,15 @@
             android:name="com.startapp.android.publish.adsCommon.activities.FullScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme" />
+        
+        
+        <service android:name="com.startapp.android.publish.common.metaData.PeriodicMetaDataService" />
+		<service android:name="com.startapp.android.publish.common.metaData.InfoEventService" />
+		<receiver android:name="com.startapp.android.publish.common.metaData.BootCompleteListener" >
+		    <intent-filter>
+		        <action android:name="android.intent.action.BOOT_COMPLETED" />
+		    </intent-filter>
+		</receiver>
 
         <!-- End of StartApp activities integration -->
 
