@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 25
     buildToolsVersion "25.0.2"
 
     defaultConfig {
         applicationId "com.startapp.startappinterstitialexample"
         minSdkVersion 8
-        targetSdkVersion 24
+        targetSdkVersion 25
     }
 
     buildTypes {
@@ -19,6 +19,5 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:24.1.1'
-    compile files('libs/StartAppInApp-3.5.7.jar')
+    compile ('com.startapp:inapp-sdk:3.6.1')
 }
