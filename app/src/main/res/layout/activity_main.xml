@@ -4,54 +4,69 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:baselineAligned="false"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
-	<com.startapp.android.publish.ads.banner.Banner
+    <com.startapp.android.publish.ads.banner.Banner
         android:id="@+id/startAppBanner1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <ImageView
-        android:id="@+id/imgFreeApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:onClick="freeAppClick"
-        android:enabled="false"/>
-    
-    <TextView
-        android:id="@+id/txtFreeApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/imgFreeApp"
-        android:onClick="freeAppClick"
-        android:enabled="false"
-        android:textColor="#000000" />
-
     <Button
         android:id="@+id/btnRewardedVideo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnNextActivity"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:background="@drawable/rounded_button"
         android:onClick="btnShowRewardedClick"
-        android:text="Show Rewarded" />
-    
+        android:padding="15dp"
+        android:text="@string/main_rewardedBtn"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/btnNextActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imgFreeApp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
+        android:layout_below="@+id/btnRewardedVideo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:background="@drawable/rounded_button"
         android:onClick="btnNextActivityClick"
-        android:text="Next Activity" />
+        android:padding="15dp"
+        android:text="@string/main_nextBtn"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/nativeAdLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/startAppBanner1"
+        android:layout_below="@+id/btnNextActivity"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:orientation="horizontal"></LinearLayout>
 
 </RelativeLayout>
