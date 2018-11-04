@@ -99,13 +99,11 @@ public class MainActivity extends Activity {
     /**
      * Set user consent and initialize the SDK
      */
-    private void setUserConsent(boolean isGivenConsent) {
+    private void writePersonalizedAdsConsent(boolean isGranted) {
         StartAppSDK.setUserConsent(this,
                 "pas",
                 System.currentTimeMillis(),
-                isGivenConsent);
-
-        initStartAppSdk();
+                isGranted);
 
         getPreferences(Context.MODE_PRIVATE)
                 .edit()
@@ -138,7 +136,7 @@ public class MainActivity extends Activity {
         okBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setUserConsent(true);
+                writePersonalizedAdsConsent(true);
                 if (callback != null) {
                     callback.run();
                 }
@@ -151,7 +149,7 @@ public class MainActivity extends Activity {
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setUserConsent(false);
+                writePersonalizedAdsConsent(false);
                 if (callback != null) {
                     callback.run();
                 }
@@ -172,7 +170,13 @@ public class MainActivity extends Activity {
             return;
         }
 
-        showGdprDialog(callback);
+        showGdprDialog(new Runnable() {
+            @Override
+            public void run() {
+                initStartAppSdk();
+                callback.run();
+            }
+        });
     }
 
     @Override
@@ -342,9 +346,8 @@ public class MainActivity extends Activity {
             case R.id.ads_item:
                 showGdprDialog(null);
                 return true;
-
-                default:
-                    return super.onOptionsItemSelected(item);
         }
+
+        return super.onOptionsItemSelected(item);
     }
 }
