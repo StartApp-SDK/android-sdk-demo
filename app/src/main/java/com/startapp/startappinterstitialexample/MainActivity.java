@@ -136,10 +136,11 @@ public class MainActivity extends Activity {
         okBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                writePersonalizedAdsConsent(true);
                 if (callback != null) {
                     callback.run();
                 }
+
+                writePersonalizedAdsConsent(true);
                 dialog.dismiss();
             }
         });
@@ -149,10 +150,11 @@ public class MainActivity extends Activity {
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                writePersonalizedAdsConsent(false);
                 if (callback != null) {
                     callback.run();
                 }
+
+                writePersonalizedAdsConsent(false);
                 dialog.dismiss();
             }
         });
