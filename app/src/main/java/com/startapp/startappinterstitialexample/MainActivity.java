@@ -136,11 +136,10 @@ public class MainActivity extends Activity {
         okBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                writePersonalizedAdsConsent(true);
                 if (callback != null) {
                     callback.run();
                 }
-
-                writePersonalizedAdsConsent(true);
                 dialog.dismiss();
             }
         });
@@ -150,11 +149,10 @@ public class MainActivity extends Activity {
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                writePersonalizedAdsConsent(false);
                 if (callback != null) {
                     callback.run();
                 }
-
-                writePersonalizedAdsConsent(false);
                 dialog.dismiss();
             }
         });
@@ -301,6 +299,16 @@ public class MainActivity extends Activity {
                 Log.e("MainActivity", "Failed to load rewarded video with reason: " + arg0.getErrorMessage());
             }
         });
+    }
+
+    /**
+     * Method to run when the recycler activity button is clicked.
+     *
+     * @param view
+     */
+    public void btnRecyclerActivityClick(View view) {
+        Intent nextActivity = new Intent(this, RecyclerViewActivity.class);
+        startActivity(nextActivity);
     }
 
     /**

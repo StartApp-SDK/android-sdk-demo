@@ -12,6 +12,9 @@
     <string name="gdpr_logo">StartApp logo</string>
     <string name="main_nextBtn">Next Activity</string>
     <string name="main_rewardedBtn">Show Rewarded Video</string>
+    <string name="main_recyclerBtn">Native Ads in the RecyclerView</string>>
     <string name="menu_ads">Personalized Ads</string>
+    <string name="list_row_title">Ad Title</string>
+    <string name="list_row_description">Ad Description</string>
 
 </resources>
