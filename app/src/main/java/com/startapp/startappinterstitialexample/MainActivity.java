@@ -1,6 +1,15 @@
 package com.startapp.startappinterstitialexample;
 
-import java.util.ArrayList;
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.startapp.android.publish.ads.nativead.NativeAdDetails;
 import com.startapp.android.publish.ads.nativead.NativeAdPreferences;
@@ -13,30 +22,10 @@ import com.startapp.android.publish.adsCommon.VideoListener;
 import com.startapp.android.publish.adsCommon.adListeners.AdDisplayListener;
 import com.startapp.android.publish.adsCommon.adListeners.AdEventListener;
 
-import android.app.Activity;
-import android.app.Dialog;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Typeface;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import java.util.ArrayList;
 
-public class MainActivity extends Activity {
-
-    /**
-     * Uses for storing whether gdpr dialog was shown
-     */
-    private static final String SHARED_PREFS_GDPR_SHOWN = "gdpr_dialog_was_shown";
-
+@SuppressLint("SetTextI18n")
+public class MainActivity extends AppCompatActivity {
     /**
      * StartAppAd object declaration
      */
@@ -96,176 +85,79 @@ public class MainActivity extends Activity {
         }
     };
 
-    /**
-     * Set user consent and initialize the SDK
-     */
-    private void writePersonalizedAdsConsent(boolean isGranted) {
-        StartAppSDK.setUserConsent(this,
-                "pas",
-                System.currentTimeMillis(),
-                isGranted);
-
-        getPreferences(Context.MODE_PRIVATE)
-                .edit()
-                .putBoolean(SHARED_PREFS_GDPR_SHOWN, true)
-                .commit();
-    }
-
-    /**
-     * Initialize the SDK
-     */
-    private void initStartAppSdk() {
-        StartAppSDK.init(this, "ApplicationID", true); //TODO: Replace with your Application ID
-    }
-
-    /**
-     * Ask an user for the consent
-     */
-    private void showGdprDialog(final Runnable callback) {
-        final View view = getLayoutInflater().inflate(R.layout.dialog_gdpr, null);
-        final Dialog dialog = new Dialog(this, android.R.style.Theme_Light_NoTitleBar);
-        dialog.setContentView(view);
-
-        final Typeface medium = Typeface.createFromAsset(getAssets(), "gotham_medium.ttf");
-        final Typeface book = Typeface.createFromAsset(getAssets(), "gotham_book.ttf");
-        ((TextView) view.findViewById(R.id.title)).setTypeface(medium);
-        ((TextView) view.findViewById(R.id.body)).setTypeface(book);
-
-        final Button okBtn = view.findViewById(R.id.okBtn);
-        okBtn.setTypeface(medium);
-        okBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                writePersonalizedAdsConsent(true);
-                if (callback != null) {
-                    callback.run();
-                }
-                dialog.dismiss();
-            }
-        });
-
-        final Button cancelBtn = view.findViewById(R.id.cancelBtn);
-        cancelBtn.setTypeface(medium);
-        cancelBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                writePersonalizedAdsConsent(false);
-                if (callback != null) {
-                    callback.run();
-                }
-                dialog.dismiss();
-            }
-        });
-
-        dialog.show();
-    }
-
-    /**
-     * Check whether we asked an user about the consent and if not then ask and initialize the SDK
-     */
-    private void initStartAppSdkAccordingToConsent(final Runnable callback) {
-        if (getPreferences(Context.MODE_PRIVATE).getBoolean(SHARED_PREFS_GDPR_SHOWN, false)) {
-            initStartAppSdk();
-            callback.run();
-            return;
-        }
-
-        showGdprDialog(new Runnable() {
-            @Override
-            public void run() {
-                initStartAppSdk();
-                callback.run();
-            }
-        });
-    }
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle state) {
+        super.onCreate(state);
 
-        initStartAppSdkAccordingToConsent(new Runnable() {
+        // TODO: Replace with your Application ID
+        StartAppSDK.init(this, "ApplicationID", true);
 
-            @Override
-            public void run() {
-                /**
-                 * Load Native Ad with the following parameters:
-                 * 1. Only 1 Ad
-                 * 2. Download ad image automatically
-                 * 3. Image size of 150x150px
-                 */
-                startAppNativeAd.loadAd(
-                        new NativeAdPreferences()
-                                .setAdsNumber(1)
-                                .setAutoBitmapDownload(true)
-                                .setPrimaryImageSize(2),
-                        nativeAdListener);
-            }
-        });
+        /*
+         * Load Native Ad with the following parameters:
+         * 1. Only 1 Ad
+         * 2. Download ad image automatically
+         * 3. Image size of 150x150px
+         */
+        startAppNativeAd.loadAd(
+                new NativeAdPreferences()
+                        .setAdsNumber(1)
+                        .setAutoBitmapDownload(true)
+                        .setPrimaryImageSize(2),
+                nativeAdListener);
 
         setContentView(R.layout.activity_main);
     }
 
     /**
      * Method to run when the next activity button is clicked.
-     *
-     * @param view
      */
     public void btnNextActivityClick(View view) {
-
         // Show an Ad
         startAppAd.showAd(new AdDisplayListener() {
-
             /**
              * Callback when Ad has been hidden
-             * @param ad
              */
             @Override
             public void adHidden(Ad ad) {
-
                 // Run second activity right after the ad was hidden
-                Intent nextActivity = new Intent(MainActivity.this,
-                        SecondActivity.class);
+                Intent nextActivity = new Intent(MainActivity.this, SecondActivity.class);
+
                 startActivity(nextActivity);
             }
 
             /**
              * Callback when ad has been displayed
-             * @param ad
              */
             @Override
             public void adDisplayed(Ad ad) {
-
+                // none
             }
 
             /**
              * Callback when ad has been clicked
-             * @param ad
              */
             @Override
-            public void adClicked(Ad arg0) {
-
+            public void adClicked(Ad ad) {
+                // none
             }
 
             /**
              * Callback when ad not displayed
-             * @param ad
              */
             @Override
-            public void adNotDisplayed(Ad arg0) {
-
+            public void adNotDisplayed(Ad ad) {
+                // none
             }
         });
     }
 
     /**
      * Method to run when rewarded button is clicked
-     *
-     * @param view
      */
     public void btnShowRewardedClick(View view) {
         final StartAppAd rewardedVideo = new StartAppAd(this);
 
-        /**
+        /*
          * This is very important: set the video listener to be triggered after video
          * has finished playing completely
          */
@@ -277,12 +169,11 @@ public class MainActivity extends Activity {
             }
         });
 
-        /**
+        /*
          * Load rewarded by specifying AdMode.REWARDED
          * We are using AdEventListener to trigger ad show
          */
         rewardedVideo.loadAd(AdMode.REWARDED_VIDEO, new AdEventListener() {
-
             @Override
             public void onReceiveAd(Ad arg0) {
                 rewardedVideo.showAd();
@@ -290,7 +181,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onFailedToReceiveAd(Ad arg0) {
-                /**
+                /*
                  * Failed to load rewarded video:
                  * 1. Check that FullScreenActivity is declared in AndroidManifest.xml:
                  * See https://github.com/StartApp-SDK/Documentation/wiki/Android-InApp-Documentation#activities
@@ -303,8 +194,6 @@ public class MainActivity extends Activity {
 
     /**
      * Method to run when the recycler activity button is clicked.
-     *
-     * @param view
      */
     public void btnRecyclerActivityClick(View view) {
         Intent nextActivity = new Intent(this, RecyclerViewActivity.class);
@@ -337,27 +226,7 @@ public class MainActivity extends Activity {
     @Override
     public void onBackPressed() {
         startAppAd.onBackPressed();
+
         super.onBackPressed();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        final MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main, menu);
-        return true;
-    }
-
-    /**
-     * Allow an user to change his/her mind according to GDPR specifications
-     */
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.ads_item:
-                showGdprDialog(null);
-                return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
