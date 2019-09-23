@@ -2,8 +2,8 @@ package com.startapp.startappinterstitialexample;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.startapp.android.publish.ads.nativead.NativeAdPreferences;
 import com.startapp.android.publish.ads.nativead.StartAppNativeAd;
