@@ -12,9 +12,9 @@ android {
 }
 
 dependencies {
-    implementation 'com.startapp:inapp-sdk:4.0.2'
+    implementation 'com.startapp:inapp-sdk:4.2.+'
 
-    implementation 'com.startapp:consent-dialog-support:1.3.2'
+    implementation 'com.startapp:consent-dialog-support:1.3.+'
     // NOTE if you use AndroidX, then include line below instead
-    // implementation 'com.startapp:consent-dialog-androidx:1.3.2'
+    // implementation 'com.startapp:consent-dialog-androidx:1.3.+'
 }
