@@ -1,2 +1,2 @@
 include ':app'
-include ':example-gdpr-consent-dialog'
+include ':example-recycler-view-banner'

@@ -14,8 +14,7 @@ The example application contains the following ads:
 * Banners - the application contains an integration of the banner both in the layout XML file ([/res/layout/activity_main.xml](/res/layout/activity_main.xml)) and programatically ([/src/com/startapp/startappinterstitialexample/SecondActivity.java](/src/com/startapp/startappinterstitialexample/SecondActivity.java))
 * Exit ad for exiting the application with the back button
 * Return ad when returning to the application after a certain period of time of it being in the background (when exiting using the home button)
-
-You can find example of using GDPR consent dialog in [this example](/example-gdpr-consent-dialog).
+* [Banner inside RecyclerView](/example-recycler-view-banner).
 
 When integrating the SDK with your application, please make sure to use the latest SDK version, which can be downloaded from our [developers portal](https://developers.startapp.com).
 Please also follow the integration manual which comes with the SDK.
