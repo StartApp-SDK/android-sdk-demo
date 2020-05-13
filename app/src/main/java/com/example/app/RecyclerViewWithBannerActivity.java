@@ -22,18 +22,18 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class RecyclerViewWithBannerActivity extends AppCompatActivity {
     @Nullable
-    private AdapterWithBanner adapter;
+    protected AdapterWithBanner adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle state) {
         super.onCreate(state);
 
-        // FIXME replace ApplicationID with your value
-        StartAppSDK.init(this, "ApplicationID", true);
+        // NOTE always use test ads during development and testing
+        StartAppSDK.setTestAdsEnabled(BuildConfig.DEBUG);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.recycler_view);
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         loadData();
     }
 
-    // TODO this is just an example of loading JSON array, change this code according to your needs
+    // TODO example of loading JSON array, change this code according to your needs
     @UiThread
     private void loadData() {
         if (adapter != null) {
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             @WorkerThread
             public void run() {
-                String url = "https://raw.githubusercontent.com/StartApp-SDK/StartApp_InApp_SDK_Example/master/example-recycler-view-banner/data.json";
+                String url = "https://raw.githubusercontent.com/StartApp-SDK/StartApp_InApp_SDK_Example/master/app/data.json";
 
                 final List<String> data = new ArrayList<>();
 

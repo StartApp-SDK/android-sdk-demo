@@ -1,2 +1,1 @@
 include ':app'
-include ':example-recycler-view-banner'

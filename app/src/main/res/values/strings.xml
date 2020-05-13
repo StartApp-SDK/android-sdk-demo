@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">StartApp SDK Example</string>
-    <string name="action_settings">Settings</string>
-    <string name="txt_Welcome">StartApp Interstitial Showcase</string>
-    <string name="txt_SecondActivity">Welcome to another Activity</string>
-    <string name="main_nextBtn">Next Activity</string>
-    <string name="main_rewardedBtn">Show Rewarded Video</string>
-    <string name="main_recyclerBtn">Native Ads in the RecyclerView</string>>
-    <string name="menu_ads">Personalized Ads</string>
-    <string name="list_row_title">Ad Title</string>
-    <string name="list_row_description">Ad Description</string>
 </resources>

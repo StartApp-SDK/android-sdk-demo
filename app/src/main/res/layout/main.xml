@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity"
+    tools:ignore="HardcodedText">
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="Interstitial"
+        android:onClick="showInterstitial" />
+
+    <Button
+        android:id="@+id/rewarded_video"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="Rewarded video"
+        android:onClick="showRewardedVideo" />
+
+    <Button
+        android:id="@+id/recycler_view_banner"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="RecyclerView with Banner"
+        android:onClick="showRecyclerViewWithBanner" />
+
+    <Button
+        android:id="@+id/recycler_view_native"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="RecyclerView with NativeAd"
+        android:onClick="showRecyclerViewWithNativeAd" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Example of Banner added from xml" />
+
+    <com.startapp.sdk.ads.banner.Banner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
