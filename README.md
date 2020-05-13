@@ -12,6 +12,8 @@ The example application contains the following ads:
 
 ## Add dependency
 
+[**app/build.gradle**](app/build.gradle#L16)
+
 ```groovy
 dependencies {
     // noinspection GradleDynamicVersion
@@ -19,7 +21,7 @@ dependencies {
 }
 ```
 
-## Update AndroidManifest.xml
+## Update [AndroidManifest.xml](app/src/main/AndroidManifest.xml#L21)
 
 ```xml
 <!-- Add these permissions for better ad targeting -->
@@ -38,7 +40,7 @@ dependencies {
 
 ## Set up test ad
 
-*MainActivity.java*
+[**MainActivity.java**](app/src/main/java/com/example/app/MainActivity.java#L24)
 
 ```java
 @Override
@@ -52,7 +54,7 @@ protected void onCreate(Bundle state) {
 }
 ```
 
-## Add Banner into xml layout
+## Add Banner into [xml layout](app/src/main/res/layout/main.xml#L52)
 
 ```xml
 <com.startapp.sdk.ads.banner.Banner
@@ -60,7 +62,7 @@ protected void onCreate(Bundle state) {
     android:layout_height="wrap_content" />
 ```
 
-## Show interstitial ad
+## [Show interstitial ad](app/src/main/java/com/example/app/MainActivity.java#L32)
 
 ```java
 public void someMethod() {
@@ -72,7 +74,7 @@ public void someMethod() {
 }
 ```
 
-## Show rewarded video
+## [Show rewarded video](app/src/main/java/com/example/app/MainActivity.java#L36)
 
 ```java
 public void showRewardedVideo() {
