@@ -17,7 +17,7 @@ The example application contains the following ads:
 ```groovy
 dependencies {
     // noinspection GradleDynamicVersion
-    implementation 'com.startapp:inapp-sdk:4.5.+'
+    implementation 'com.startapp:inapp-sdk:4.6.+'
 }
 ```
 
