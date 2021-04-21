@@ -105,7 +105,7 @@ public void showRewardedVideo() {
 }
 ```
 
-For any question or assistance, please contact us at support@startapp.com.
+For any question or assistance, please contact us at support@start.io
 
  [1]: https://start.io
  [2]: https://support.start.io/hc/en-us/articles/360014774799
