@@ -1,6 +1,6 @@
-# [StartApp][] SDK Example
+# [StartApp][1] SDK Example
 
-This project provides an example of the [StartApp][] SDK integration for Android.
+This project provides an example of the [StartApp SDK integration for Android][2].
 
 The example application contains the following ads:
 
@@ -15,9 +15,13 @@ The example application contains the following ads:
 [**app/build.gradle**](app/build.gradle#L16)
 
 ```groovy
+repositories {
+    maven { url 'https://startappdev.bintray.com/maven' }
+}
+
 dependencies {
     // noinspection GradleDynamicVersion
-    implementation 'com.startapp:inapp-sdk:4.6.+'
+    implementation 'com.startapp:inapp-sdk:4.8.+'
 }
 ```
 
@@ -103,4 +107,5 @@ public void showRewardedVideo() {
 
 For any question or assistance, please contact us at support@startapp.com.
 
-[StartApp]: http://www.startapp.com
+ [1]: https://start.io
+ [2]: https://support.start.io/hc/en-us/articles/360014774799
