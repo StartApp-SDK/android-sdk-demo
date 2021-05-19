@@ -16,7 +16,7 @@ The example application contains the following ads:
 
 ```groovy
 repositories {
-    maven { url 'https://startappdev.bintray.com/maven' }
+    mavenCentral()
 }
 
 dependencies {
