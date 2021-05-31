@@ -20,7 +20,9 @@
             android:name="com.startapp.sdk.APPLICATION_ID"
             android:value="YOUR_APP_ID" />
 
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,5 +33,13 @@
         <activity android:name=".OtherActivity" />
         <activity android:name=".RecyclerViewWithBannerActivity" />
         <activity android:name=".RecyclerViewWithNativeAdActivity" />
+
+        <receiver
+            android:name="com.startapp.sdk.adsbase.remoteconfig.BootCompleteListener"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>
