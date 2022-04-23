@@ -15,3 +15,11 @@ allprojects {
         mavenCentral()
     }
 }
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // noinspection GradleDynamicVersion
+    implementation 'com.startapp:inapp-sdk:4.8.+'
+}
