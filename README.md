@@ -21,7 +21,7 @@ repositories {
 
 dependencies {
     // noinspection GradleDynamicVersion
-    implementation 'com.startapp:inapp-sdk:4.8.+'
+    implementation 'com.startapp:inapp-sdk:4.10.+'
 }
 ```
 
