@@ -33,6 +33,7 @@ dependencies {
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 <uses-permission android:name="android.permission.BLUETOOTH" />
+<uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
 
 <application>
     <!-- TODO replace YOUR_APP_ID with actual value -->

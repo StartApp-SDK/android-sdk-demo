@@ -35,12 +35,9 @@ public class MainActivity extends AppCompatActivity {
     public void showRewardedVideo(View view) {
         final StartAppAd rewardedVideo = new StartAppAd(this);
 
-        rewardedVideo.setVideoListener(new VideoListener() {
-            @Override
-            public void onVideoCompleted() {
-                Toast.makeText(getApplicationContext(), "Grant the reward to user", Toast.LENGTH_SHORT).show();
-            }
-        });
+        rewardedVideo.setVideoListener(() ->
+                Toast.makeText(getApplicationContext(), "Grant the reward to user", Toast.LENGTH_SHORT).show()
+        );
 
         rewardedVideo.loadAd(StartAppAd.AdMode.REWARDED_VIDEO, new AdEventListener() {
             @Override
