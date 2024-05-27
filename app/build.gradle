@@ -4,7 +4,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 33
 
         applicationId 'com.example.app'
@@ -14,10 +14,10 @@ android {
 
 dependencies {
     // noinspection GradleDynamicVersion
-    implementation 'com.startapp:inapp-sdk:4.11.+'
+    implementation 'com.startapp:inapp-sdk:5.+'
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.recyclerview:recyclerview:1.3.1'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
 }
