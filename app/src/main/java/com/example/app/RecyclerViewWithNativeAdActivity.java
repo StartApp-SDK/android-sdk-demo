@@ -84,7 +84,7 @@ public class RecyclerViewWithNativeAdActivity extends AppCompatActivity {
             @Override
             @WorkerThread
             public void run() {
-                String url = "https://raw.githubusercontent.com/StartApp-SDK/StartApp_InApp_SDK_Example/master/app/data.json";
+                String url = "https://raw.githubusercontent.com/StartApp-SDK/StartApp_InApp_SDK_Example/legacy/app/data.json";
 
                 final List<String> data = new ArrayList<>();
 
